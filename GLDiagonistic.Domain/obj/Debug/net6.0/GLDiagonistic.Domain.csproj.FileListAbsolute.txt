@@ -1,0 +1,12 @@
+G:\Fahim\Dot Net Core\GreenLifeDiagonistic\GLDiagonistic.Domain\bin\Debug\net6.0\GLDiagonistic.Domain.deps.json
+G:\Fahim\Dot Net Core\GreenLifeDiagonistic\GLDiagonistic.Domain\bin\Debug\net6.0\GLDiagonistic.Domain.dll
+G:\Fahim\Dot Net Core\GreenLifeDiagonistic\GLDiagonistic.Domain\bin\Debug\net6.0\GLDiagonistic.Domain.pdb
+G:\Fahim\Dot Net Core\GreenLifeDiagonistic\GLDiagonistic.Domain\obj\Debug\net6.0\GLDiagonistic.Domain.csproj.AssemblyReference.cache
+G:\Fahim\Dot Net Core\GreenLifeDiagonistic\GLDiagonistic.Domain\obj\Debug\net6.0\GLDiagonistic.Domain.GeneratedMSBuildEditorConfig.editorconfig
+G:\Fahim\Dot Net Core\GreenLifeDiagonistic\GLDiagonistic.Domain\obj\Debug\net6.0\GLDiagonistic.Domain.AssemblyInfoInputs.cache
+G:\Fahim\Dot Net Core\GreenLifeDiagonistic\GLDiagonistic.Domain\obj\Debug\net6.0\GLDiagonistic.Domain.AssemblyInfo.cs
+G:\Fahim\Dot Net Core\GreenLifeDiagonistic\GLDiagonistic.Domain\obj\Debug\net6.0\GLDiagonistic.Domain.csproj.CoreCompileInputs.cache
+G:\Fahim\Dot Net Core\GreenLifeDiagonistic\GLDiagonistic.Domain\obj\Debug\net6.0\GLDiagonistic.Domain.dll
+G:\Fahim\Dot Net Core\GreenLifeDiagonistic\GLDiagonistic.Domain\obj\Debug\net6.0\refint\GLDiagonistic.Domain.dll
+G:\Fahim\Dot Net Core\GreenLifeDiagonistic\GLDiagonistic.Domain\obj\Debug\net6.0\GLDiagonistic.Domain.pdb
+G:\Fahim\Dot Net Core\GreenLifeDiagonistic\GLDiagonistic.Domain\obj\Debug\net6.0\ref\GLDiagonistic.Domain.dll

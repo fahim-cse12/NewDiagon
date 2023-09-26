@@ -1,0 +1,15 @@
+G:\Fahim\Dot Net Core\GreenLifeDiagonistic\GLDiagonistice.Application\bin\Debug\net6.0\GLDiagonistice.Application.deps.json
+G:\Fahim\Dot Net Core\GreenLifeDiagonistic\GLDiagonistice.Application\bin\Debug\net6.0\GLDiagonistice.Application.dll
+G:\Fahim\Dot Net Core\GreenLifeDiagonistic\GLDiagonistice.Application\bin\Debug\net6.0\GLDiagonistice.Application.pdb
+G:\Fahim\Dot Net Core\GreenLifeDiagonistic\GLDiagonistice.Application\bin\Debug\net6.0\GLDiagonistic.Domain.dll
+G:\Fahim\Dot Net Core\GreenLifeDiagonistic\GLDiagonistice.Application\bin\Debug\net6.0\GLDiagonistic.Domain.pdb
+G:\Fahim\Dot Net Core\GreenLifeDiagonistic\GLDiagonistice.Application\obj\Debug\net6.0\GLDiagonistice.Application.csproj.AssemblyReference.cache
+G:\Fahim\Dot Net Core\GreenLifeDiagonistic\GLDiagonistice.Application\obj\Debug\net6.0\GLDiagonistice.Application.GeneratedMSBuildEditorConfig.editorconfig
+G:\Fahim\Dot Net Core\GreenLifeDiagonistic\GLDiagonistice.Application\obj\Debug\net6.0\GLDiagonistice.Application.AssemblyInfoInputs.cache
+G:\Fahim\Dot Net Core\GreenLifeDiagonistic\GLDiagonistice.Application\obj\Debug\net6.0\GLDiagonistice.Application.AssemblyInfo.cs
+G:\Fahim\Dot Net Core\GreenLifeDiagonistic\GLDiagonistice.Application\obj\Debug\net6.0\GLDiagonistice.Application.csproj.CoreCompileInputs.cache
+G:\Fahim\Dot Net Core\GreenLifeDiagonistic\GLDiagonistice.Application\obj\Debug\net6.0\GLDiagonistice.Application.csproj.CopyComplete
+G:\Fahim\Dot Net Core\GreenLifeDiagonistic\GLDiagonistice.Application\obj\Debug\net6.0\GLDiagonistice.Application.dll
+G:\Fahim\Dot Net Core\GreenLifeDiagonistic\GLDiagonistice.Application\obj\Debug\net6.0\refint\GLDiagonistice.Application.dll
+G:\Fahim\Dot Net Core\GreenLifeDiagonistic\GLDiagonistice.Application\obj\Debug\net6.0\GLDiagonistice.Application.pdb
+G:\Fahim\Dot Net Core\GreenLifeDiagonistic\GLDiagonistice.Application\obj\Debug\net6.0\ref\GLDiagonistice.Application.dll

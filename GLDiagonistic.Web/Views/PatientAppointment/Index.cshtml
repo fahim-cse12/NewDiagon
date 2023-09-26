@@ -1,0 +1,103 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+<div class="container-xxl flex-grow-1 container-p-y">
+   
+    <div class="row">
+        <div class="card">
+            <h5 class="card-header">Patient Appointment</h5>
+            <div class="card-body">
+                <form id="patientAppointment" class="row g-3" novalidate>
+                    <input type="hidden" coll id="appointmentId" class="form-control" name="id" />
+                    <input type="hidden" coll id="patientId" class="form-control" name="id" />
+                    <div class="col-md-6">
+                        <div class="form-floating form-floating-outline">
+                            <input type="text" id="name" class="form-control" placeholder="Name" name="patientName" required />
+                            <label for="name">Patient Name</label>
+                            <div class="invalid-feedback"> Please enter Patient name</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-floating form-floating-outline">
+                            <input type="text" id="age" class="form-control" placeholder="Age" name="age" required />
+                            <label for="age">Patient Age</label>
+                            <div class="invalid-feedback"> Please enter Patient Age</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-floating form-floating-outline">
+                            <select id="selectpickerBasic" name="gender" class="selectpicker w-100" data-style="btn-default">
+                                <option>Male</option>
+                                <option>Female</option>
+                                <option>Others</option>
+                            </select>
+                            <label for="selectpickerBasic">Gender</label>
+                        </div>
+
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-floating form-floating-outline">
+                            <input type="text" id="contactNumber" class="form-control" placeholder="01xxxxxxxx" name="contactNumber" required />
+                            <label for="contactNumber">Mobile Number</label>
+                            <div class="invalid-feedback"> Please enter Mobile Number</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-floating form-floating-outline">
+                            <input type="email" id="email" class="form-control" placeholder="example@gmail.com" name="email" required />
+                            <label for="email">Email</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-floating form-floating-outline">
+                            <textarea class="form-control" id="address" rows="1" name="patientAddress" placeholder="Address"></textarea>
+                            <label for="address">Address</label>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+
+                        <div class="form-floating form-floating-outline">
+                            <select id="select2Basic" name="doctorId" required class="select2 form-select form-select-lg" data-allow-clear="true">
+                            </select>
+                            <label for="select2Basic">Select Doctor</label>
+                            <div class="invalid-feedback"> Please select Doctor</div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-floating form-floating-outline">
+                            <input type="text" name="scheduleTime" class="form-control" placeholder="HH:MM" id="flatpickr-time" />
+                            <label for="flatpickr-time">Appoint Time</label>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-floating form-floating-outline">
+                            <input type="number" id="doctorFee" class="form-control" placeholder="00.00 BDT" name="doctorFee" readonly />
+                            <label for="doctorFee">Doctor Fee</label>
+                        </div>
+                    </div>
+
+
+                    <hr />
+
+                    <div class="col-12">
+                        <div class="d-flex justify-content-center">
+                            <button type="button" onclick="SavePatientAppointment()" style="margin-right: 10px" class="btn btn-primary">Save</button>
+                            <button type="button" onclick="ResetForm()" class="btn btn-default">Reset</button>
+                        </div>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+@*<script src="~/assets/vendor/libs/jquery/jquery.js"></script>
+<script src="~/assets/vendor/libs/bootstrap-daterangepicker/bootstrap-daterangepicker.js"></script>
+<script src="~/js/patientappointment.js"></script>*@

@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\GLDiagonistic.Web.props" />
+</Project>

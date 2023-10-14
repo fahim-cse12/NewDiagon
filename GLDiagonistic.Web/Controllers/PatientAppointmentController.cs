@@ -41,5 +41,16 @@ namespace GLDiagonistic.Web.Controllers
             }
             return CreateResponse(result.Success, result.Data, result.Message, result.Errors);
         }
+
+        [HttpGet]
+        public async Task<ResponseModel<List<PatientAppointmentDto>>> LoadCurrentAllAppointment()
+        {
+            var result = await _appointmentService.GetAllAppointmentForCurrentDate();
+            if (result.Success)
+            {
+                return CreateResponse(result.Success, result.Data, result.Message, result.Errors);
+            }
+            return CreateResponse(result.Success, result.Data, result.Message, result.Errors);
+        }
     }
 }

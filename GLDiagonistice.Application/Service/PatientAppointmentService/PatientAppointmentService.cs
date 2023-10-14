@@ -95,5 +95,23 @@ namespace GLDiagonistice.Application.Service.PatientAppointmentService
                 return CreateResponse(false, 0, ex.Message, null);
             }
         }
+
+        public async Task<ResponseModel<List<PatientAppointmentDto>>> GetAllAppointmentForCurrentDate()
+        {
+            try
+            {
+                var appointmentList = await _patientAppointmentRepository.GetAllTodaysAppointment();
+                if (appointmentList.Any())
+                {
+                    return CreateResponse(true, appointmentList, "", null);
+                }
+
+                return CreateResponse<List< PatientAppointmentDto>> (true, null, "No data found for today", null);
+            }
+            catch (Exception ex)
+            {
+                return CreateResponse<List<PatientAppointmentDto>>(false, null, ex.Message, null);
+            }
+        }
     }
 }

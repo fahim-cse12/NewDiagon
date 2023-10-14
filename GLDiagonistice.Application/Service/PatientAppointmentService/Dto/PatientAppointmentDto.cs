@@ -18,7 +18,11 @@ namespace GLDiagonistice.Application.Service.PatientAppointmentService.Dto
         public string? Email { get; set; }
         public int PatientId { get; set; }
         public int DoctorId { get; set; }
+        public string DoctorName { get; set; }
+        public decimal DoctorFee { get; set; }
         public int? InvestigationId { get; set; }
+        public string InvestigationName { get; set; }
+        public decimal InvestigationFee { get; set; }
         public DateTime AppointmentDate { get; set; }
         public TimeSpan AppointmentTime { get; set; }
     }

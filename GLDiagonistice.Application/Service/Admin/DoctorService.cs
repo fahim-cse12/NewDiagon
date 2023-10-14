@@ -1,21 +1,19 @@
 ﻿using GLDiagonistice.Application.IRepository;
-using GLDiagonistice.Application.IService.IDoctor;
+using GLDiagonistice.Application.IService.Admin;
+using GLDiagonistice.Application.Service.Admin.Dto;
 using GLDiagonistice.Application.Service.Common;
-using GLDiagonistice.Application.Service.Doctor.Dto;
 using Microsoft.AspNetCore.Http;
-using System.Collections.Generic;
-using System.Diagnostics.Metrics;
 
-namespace GLDiagonistice.Application.Service.Doctor
+namespace GLDiagonistice.Application.Service.Admin
 {
     public class DoctorService : IDoctorService
     {
         private readonly IDoctorRepository _doctorRepository;
         private readonly IHttpContextAccessor _httpcontext;
-        public DoctorService(IDoctorRepository doctorRepository , IHttpContextAccessor httpcontext)
+        public DoctorService(IDoctorRepository doctorRepository, IHttpContextAccessor httpcontext)
         {
-            this._doctorRepository = doctorRepository;
-            this._httpcontext = httpcontext;    
+            _doctorRepository = doctorRepository;
+            _httpcontext = httpcontext;
         }
 
         private ResponseModel<T> CreateResponse<T>(bool status, T? data, string message, List<string>? erros)
@@ -48,12 +46,12 @@ namespace GLDiagonistice.Application.Service.Doctor
                     return CreateResponse(true, doctorList, "", null);
                 }
 
-                return CreateResponse(true, doctorList, "No data found", null); 
+                return CreateResponse(true, doctorList, "No data found", null);
 
             }
             catch (Exception ex)
             {
-                return CreateResponse<List<DoctorDto>> (false, null, ex.Message, null);
+                return CreateResponse<List<DoctorDto>>(false, null, ex.Message, null);
             }
         }
 

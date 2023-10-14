@@ -1,12 +1,12 @@
-﻿using GLDiagonistice.Application.Service.Common;
-using GLDiagonistice.Application.Service.Doctor.Dto;
+﻿using GLDiagonistice.Application.Service.Admin.Dto;
+using GLDiagonistice.Application.Service.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GLDiagonistice.Application.IService.IDoctor
+namespace GLDiagonistice.Application.IService.Admin
 {
     public interface IDoctorService
     {

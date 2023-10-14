@@ -1,16 +1,17 @@
 ﻿using GLDiagonistice.Application.IService.Admin;
 using GLDiagonistice.Application.Service.Admin.Dto;
+using GLDiagonistice.Application.Service.Admin;
 using GLDiagonistice.Application.Service.Common;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GLDiagonistic.Web.Controllers
 {
-    public class DoctorController : Controller
+    public class InvestigationController : Controller
     {
-        private readonly IDoctorService _doctorService;  
-        public DoctorController(IDoctorService doctorService)
+        private readonly IInvestigationService _investigationService;
+        public InvestigationController(IInvestigationService investigationService)
         {
-            this._doctorService = doctorService;
+            this._investigationService = investigationService;
         }
 
         private ResponseModel<T> CreateResponse<T>(bool status, T data, string message, List<string>? erros)
@@ -29,11 +30,10 @@ namespace GLDiagonistic.Web.Controllers
             return View();
         }
 
-
         [HttpGet]
-        public async Task<ResponseModel<List<DoctorDto>>> LoadAllDoctorList()
+        public async Task<ResponseModel<List<InvestigationDto>>> LoadAllInvestigationList()
         {
-            var result = await _doctorService.GetAllDoctorList();
+            var result = await _investigationService.GetAllInvestigationList();
             if (result.Success)
             {
                 return CreateResponse(true, result.Data, result.Message, result.Errors);

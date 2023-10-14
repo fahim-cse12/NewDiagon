@@ -12,11 +12,11 @@
             <h5 class="card-header">Patient Appointment</h5>
             <div class="card-body">
                 <form id="patientAppointment" class="row g-3" novalidate>
-                    <input type="hidden" coll id="appointmentId" class="form-control" name="id" />
-                    <input type="hidden" coll id="patientId" class="form-control" name="id" />
+                    <input type="hidden" coll id="appointmentId" class="form-control" name="appointmentId" />
+                    <input type="hidden" coll id="patientId" class="form-control" name="patientId" />
                     <div class="col-md-6">
                         <div class="form-floating form-floating-outline">
-                            <input type="text" id="name" class="form-control" placeholder="Name" name="patientName" required />
+                            <input type="text" id="patientname" class="form-control" placeholder="Name" name="patientName" required />
                             <label for="name">Patient Name</label>
                             <div class="invalid-feedback"> Please enter Patient name</div>
                         </div>
@@ -31,9 +31,9 @@
                     <div class="col-md-3">
                         <div class="form-floating form-floating-outline">
                             <select id="selectpickerBasic" name="gender" class="selectpicker w-100" data-style="btn-default">
-                                <option>Male</option>
-                                <option>Female</option>
-                                <option>Others</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Others">Others</option>
                             </select>
                             <label for="selectpickerBasic">Gender</label>
                         </div>
@@ -70,7 +70,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="form-floating form-floating-outline">
-                            <input type="text" name="scheduleTime" class="form-control" placeholder="HH:MM" id="flatpickr-time" />
+                            <input type="text" name="appointmentTime" class="form-control" placeholder="HH:MM" id="flatpickr-time" />
                             <label for="flatpickr-time">Appoint Time</label>
                         </div>
                     </div>
@@ -80,7 +80,21 @@
                             <label for="doctorFee">Doctor Fee</label>
                         </div>
                     </div>
+                    <div class="col-md-6">
 
+                        <div class="form-floating form-floating-outline">
+                            <select id="investigation" name="investigationId" class="select2 form-select form-select-lg" data-allow-clear="true">
+                            </select>
+                            <label for="select2Basic">Select Investigation</label>
+                            <div class="invalid-feedback"> Please select any test</div>
+                        </div>
+                    </div>               
+                    <div class="col-md-6">
+                        <div class="form-floating form-floating-outline">
+                            <input type="number" id="investigationFee" class="form-control" placeholder="00.00 BDT" name="investigationFee" readonly />
+                            <label for="doctorFee">Investigation Fee</label>
+                        </div>
+                    </div>
 
                     <hr />
 
@@ -92,11 +106,30 @@
                     </div>
 
                 </form>
+                <hr/>
+                <div class="card-datatable dataTable_select text-nowrap table-responsive">
+                    <table class="dt_Appointment table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Action</th>
+                                <th class="collapsed">Id</th>
+                                <th>Patient Name</th>
+                                <th>Patient Age</th>
+                                <th>Mobile No</th>
+                                <th>Doctor Name</th>
+                                <th>Doctor Fee</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
 
             </div>
         </div>
     </div>
 </div>
+@section Scripts{
+    <script src="/js/patientappointment.js"></script>
+}
 
 @*<script src="~/assets/vendor/libs/jquery/jquery.js"></script>
 <script src="~/assets/vendor/libs/bootstrap-daterangepicker/bootstrap-daterangepicker.js"></script>

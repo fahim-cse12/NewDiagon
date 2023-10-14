@@ -252,10 +252,45 @@
     @*    <script src="~/assets/js/form-validation.js"></script> *@
     <script src="~/assets/js/forms-selects.js"></script>
     <script src="~/assets/js/dashboards-analytics.js"></script>
-    <script src="~/js/patientappointment.js"></script>
+  
     
 
     @await RenderSectionAsync("Scripts", required: false)
 
 </body>
 </html>
+
+
+@*<script>
+    $(document).ready(function () {
+
+        var sidebarLinks = $(".menu-link");     
+
+        sidebarLinks.on("click", function () {
+            // Remove the 'active' class from all menu items
+            $(".menu-item").removeClass("active");
+
+            // Remove the 'open' class from all top-level menu items
+            $(".menu-item").removeClass("open");
+
+            // Add the 'active' class to the clicked menu item's parent (li)
+            $(this).closest(".menu-item").addClass("active");
+
+            // Add the 'open' class to the top-level parent of the clicked menu item
+            $(this).closest(".menu-sub").closest(".menu-item").addClass("open");
+
+            // Store the clicked link's href in local storage
+            var linkHref = $(this).attr("href");
+            localStorage.removeItem("selectedMenu");
+            localStorage.setItem("selectedMenu", linkHref);
+        });
+
+        // Check if there is a selected menu in local storage and set the state
+        var selectedMenu = localStorage.getItem("selectedMenu");
+        if (selectedMenu) {
+            // Find the link with the matching href and set its parent menu item as 'active' and 'open'
+            sidebarLinks.filter("[href='" + selectedMenu + "']").closest(".menu-item").addClass("active");
+            sidebarLinks.filter("[href='" + selectedMenu + "']").closest(".menu-sub").closest(".menu-item").addClass("open");
+        }
+    });
+</script>*@

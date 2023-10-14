@@ -8,3 +8,4 @@ namespace GLDiagonistice.Application.Service.User.Dto
 {
     public record LoginDto(string UserName, string Password);
 }
+

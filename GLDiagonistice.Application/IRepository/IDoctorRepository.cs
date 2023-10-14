@@ -1,4 +1,4 @@
-﻿using GLDiagonistice.Application.Service.Doctor.Dto;
+﻿using GLDiagonistice.Application.Service.Admin.Dto;
 using System;
 using System.Collections.Generic;
 using System.Linq;

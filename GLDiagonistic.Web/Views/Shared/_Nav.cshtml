@@ -1,7 +1,26 @@
 ﻿
+@{
+    var currentUrl = Context.Request.Path;
+    var configureMenuItem = new[]
+    {
+        new { Url = "/Role/Index", Text = "Role Setup" },
+        new { Url = "/User/Index", Text = "User Setup" },
+        new { Url = "/RolePermission/Index", Text = "Role Wise Permission" },
+        new { Url = "/Doctor/Index", Text = "Doctor Setup" },
+        new { Url = "/Investigation/Index", Text = "Investigation Setup" }
+    };
+    var appointmentMenuItem = new[]
+    {
+        new { Url = "/PatientAppointment/Index", Text = "Patient Appointment" },
+        new { Url = "/InvestigationResult/Index", Text = "Investigation Result" },
+        new { Url = "/Payment/Index", Text = "Payment" },
+        new { Url = "/PatientAppointment/PatientHistory", Text = "Patient History" }
+    };
+}
+
 <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
     <div class="app-brand demo">
-        <a href="index.html" class="app-brand-link">        
+        <a href="index.html" class="app-brand-link">
             <span class="app-brand-text demo menu-text fw-bold ms-2">GreenLife Diagonistic</span>
         </a>
 
@@ -19,7 +38,50 @@
 
     <div class="menu-inner-shadow"></div>
 
-    <ul class="menu-inner py-1">
+    <ul class="menu-inner py-1">      
+        @{         
+            var parentMenuOpen = configureMenuItem.Where(i => i.Url == currentUrl).ToList();
+            <li class="menu-item @(parentMenuOpen.Any() ? "open" : "")">
+                <a href="javascript:void(0);" class="menu-link menu-toggle">
+                    <i class="menu-icon tf-icons mdi mdi-window-maximize"></i>
+                    <div data-i18n="Configuration">Configuration</div>
+                </a>
+                @foreach (var item in configureMenuItem)
+                {
+                    <ul class="menu-sub">
+                        <li class="menu-item @(Context.Request.Path == item.Url ? "active" : "")">
+                            <a href=@item.Url class="menu-link">
+                                <div>@item.Text</div>
+                            </a>
+                        </li>
+                    </ul>
+                }
+
+            </li>
+        }
+
+        @{         
+            var appointmentMenuOpen = appointmentMenuItem.Where(i => i.Url == currentUrl).ToList();
+            <li class="menu-item @(appointmentMenuOpen.Any() ? "open" : "")">
+                <a href="javascript:void(0);" class="menu-link menu-toggle">
+                    <i class="menu-icon tf-icons mdi mdi-window-maximize"></i>
+                    <div data-i18n="Configuration">Configuration</div>
+                </a>
+                @foreach (var item in appointmentMenuItem)
+                {
+                    <ul class="menu-sub">
+                        <li class="menu-item @(Context.Request.Path == item.Url ? "active" : "")">
+                            <a href=@item.Url class="menu-link">
+                                <div>@item.Text</div>
+                            </a>
+                        </li>
+                    </ul>
+                }
+
+            </li>
+        }
+    
+
         <li class="menu-item">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons mdi mdi-window-maximize"></i>
@@ -28,55 +90,16 @@
 
             <ul class="menu-sub">
                 <li class="menu-item">
-                    <a href="layouts-without-menu.html" class="menu-link">
-                        <div data-i18n="Role Setup">Role Setup</div>
-                    </a>
-                </li>
-                
-                <li class="menu-item">
-                    <a href="layouts-content-navbar.html" class="menu-link">
-                        <div data-i18n="User Setup">User Setup</div>
-                    </a>
-                </li>             
-                            
-                <li class="menu-item">
-                    <a href="layouts-without-navbar.html" class="menu-link">
-                        <div data-i18n="Role Wise Permission">Role Wise Permission</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="layouts-collapsed-menu.html" class="menu-link">
-                        <div data-i18n="Doctor Setup">Doctor Setup</div>
-                    </a>
-                </li>
-               
-            </ul>
-        </li>
-
-        <li class="menu-item">
-            <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons mdi mdi-window-maximize"></i>
-                <div data-i18n="Patient Activities">Patient Activities</div>
-            </a>
-
-            <ul class="menu-sub">
-                <li class="menu-item">
                     <a href="/PatientAppointment/Index" class="menu-link">
-                        <div data-i18n="Patient Appointment">Patient Appointment</div>
+                        <div data-i18n="Patient Appointment">Expense</div>
                     </a>
                 </li>
 
                 <li class="menu-item">
-                    <a href="layouts-content-navbar.html" class="menu-link">
-                        <div data-i18n="Patient Investigation">Patient Investigation</div>
+                    <a href="/InvestigationResult/Index" class="menu-link">
+                        <div data-i18n="Investigation Result">Income</div>
                     </a>
                 </li>
-
-                <li class="menu-item">
-                    <a href="layouts-without-navbar.html" class="menu-link">
-                        <div data-i18n="Investigation Result">Investigation Result</div>
-                    </a>
-                </li>  
 
             </ul>
         </li>

@@ -1,20 +1,23 @@
 using GLDiagonistic.Domain.Users;
 using GLDiagonistic.Infrastucture.Common;
 using GLDiagonistic.Infrastucture.Helper;
-using GLDiagonistic.Infrastucture.Repository.DoctorRepository;
+using GLDiagonistic.Infrastucture.Repository.Admin;
 using GLDiagonistic.Infrastucture.Repository.PatientAppointmentRepository;
 using GLDiagonistic.Infrastucture.Repository.User;
 using GLDiagonistice.Application.IRepository;
+using GLDiagonistice.Application.IService.Admin;
 using GLDiagonistice.Application.IService.Common;
-using GLDiagonistice.Application.IService.IDoctor;
 using GLDiagonistice.Application.IService.IPatientAppointmentService;
 using GLDiagonistice.Application.IService.User;
+using GLDiagonistice.Application.Service.Admin;
 using GLDiagonistice.Application.Service.Common;
-using GLDiagonistice.Application.Service.Doctor;
 using GLDiagonistice.Application.Service.PatientAppointmentService;
 using GLDiagonistice.Application.Service.User;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using System.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -55,10 +58,17 @@ builder.Services.AddScoped<IAppointmentService, PatientAppointmentService>();
 builder.Services.AddScoped<IPatientAppointmentRepository, PatientAppointmentRepository>();
 builder.Services.AddScoped<IDoctorRepository, DoctorRepository>();
 builder.Services.AddScoped<IDoctorService, DoctorService>();
+builder.Services.AddScoped<IInvestigationRepository, InvestigationRepository>();
+builder.Services.AddScoped<IInvestigationService, InvestigationService>();
 builder.Services.AddAutoMapper(typeof(AutoMappingProfile).Assembly);
 
 var emailConfig = builder.Configuration.GetSection("EmailConfiguration").Get<EmailConfiguration>();
 builder.Services.AddSingleton(emailConfig);
+builder.Services.AddTransient<IDbConnection>(provider =>
+{
+    var connectionString = builder.Configuration.GetConnectionString("DefaultConnectionString");
+    return new SqlConnection(connectionString);
+});
 builder.Services.Configure<IdentityOptions>(opt => opt.SignIn.RequireConfirmedEmail = true);
 
 

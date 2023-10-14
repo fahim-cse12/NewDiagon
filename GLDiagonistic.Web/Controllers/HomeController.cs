@@ -17,6 +17,16 @@ namespace GLDiagonistic.Web.Controllers
 
         public IActionResult Index()
         {
+            string selectedMenu = HttpContext.Request.Cookies["selectedMenu"]; // Use the appropriate key
+
+            if (!string.IsNullOrEmpty(selectedMenu))
+            {
+                // Clear the local storage data by setting it to an empty value
+                Response.Cookies.Append("selectedMenu", "", new CookieOptions
+                {
+                    Expires = DateTime.Now.AddYears(-1) // Expire the cookie
+                });
+            }
             return View();
         }
 

@@ -1,11 +1,17 @@
 ﻿using AutoMapper;
+using Dapper;
 using GLDiagonistic.Domain;
 using GLDiagonistic.Infrastucture.Common;
 using GLDiagonistice.Application.IRepository;
 using GLDiagonistice.Application.Service.Common;
 using GLDiagonistice.Application.Service.PatientAppointmentService.Dto;
+using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Diagnostics;
+using System.Diagnostics.Metrics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,12 +21,29 @@ namespace GLDiagonistic.Infrastucture.Repository.PatientAppointmentRepository
     public class PatientAppointmentRepository : IPatientAppointmentRepository
     {
         private readonly GLDDbContext _dbContext;
+        private readonly IDbConnection _dbConnection;
         private readonly IMapper _mapper;
-        public PatientAppointmentRepository(GLDDbContext dbContext, IMapper mapper)
+        public PatientAppointmentRepository(GLDDbContext dbContext, IDbConnection dbConnection ,IMapper mapper)
         {
             this._dbContext = dbContext;
             this._mapper = mapper;
+            _dbConnection = dbConnection;   
         }
+
+        public async Task<List<PatientAppointmentDto>> GetAllTodaysAppointment()
+        {
+            try
+            {
+                var results = await _dbConnection.QueryAsync<PatientAppointmentDto>("AllAppointmentList", commandType: CommandType.StoredProcedure);
+                return results.ToList();
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+                throw;
+            }
+        }
+
         public Task<AppointmentDto> GetAppointmentById(int id)
         {
             throw new NotImplementedException();

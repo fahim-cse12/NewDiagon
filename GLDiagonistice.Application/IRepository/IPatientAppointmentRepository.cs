@@ -10,6 +10,7 @@ namespace GLDiagonistice.Application.IRepository
         public Task<AppointmentDto> GetAppointmentById(int id);
         
         public Task<List<PatientAppointmentDto>> GetAllTodaysAppointment();
+        //public Task<Iq<PatientAppointmentDto>> GetAllAppointment();
 
     }
 }

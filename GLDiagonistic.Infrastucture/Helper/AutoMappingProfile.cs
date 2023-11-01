@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using GLDiagonistic.Domain;
-using GLDiagonistice.Application.Service.Doctor.Dto;
+using GLDiagonistice.Application.Service.Admin.Dto;
 using GLDiagonistice.Application.Service.PatientAppointmentService.Dto;
 
 namespace GLDiagonistic.Infrastucture.Helper
@@ -12,6 +12,7 @@ namespace GLDiagonistic.Infrastucture.Helper
             CreateMap<Appointment, AppointmentDto>().ReverseMap();
             CreateMap<Patient, PatientDto>().ReverseMap();
             CreateMap<Doctor, DoctorDto>().ReverseMap();
+            CreateMap<Investigation, InvestigationDto>().ReverseMap();
 
         }
     }

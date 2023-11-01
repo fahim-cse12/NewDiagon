@@ -1,6 +1,6 @@
 ﻿using GLDiagonistice.Application.Service.Common;
 
-namespace GLDiagonistice.Application.Service.Admin.Dto
+namespace GLDiagonistice.Application.Service.ConfigurationService.Dto
 {
     public class DoctorDto : BaseEntityDto
     {

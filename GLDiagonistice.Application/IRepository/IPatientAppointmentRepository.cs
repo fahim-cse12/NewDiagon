@@ -4,13 +4,10 @@ namespace GLDiagonistice.Application.IRepository
 {
     public interface IPatientAppointmentRepository
     {
-        public Task<int> SaveAndUpdatePatientInformation(PatientDto patientDto );
-        public Task<PatientDto> GetPatientInfoById(int id);
-        public Task<int> SaveAndUpdateAppointmentDto(AppointmentDto appointmentDto);
-        public Task<AppointmentDto> GetAppointmentById(int id);
-        
-        public Task<List<PatientAppointmentDto>> GetAllTodaysAppointment();
-        //public Task<Iq<PatientAppointmentDto>> GetAllAppointment();
+        public Task<int> SaveAndUpdatePatientAppointment(PatientAppointmentDto patientAppointmentDto );
+        public Task<PatientAppointmentDto> GetPatientAppointmentById(long id);
+        public Task<int> DeletePatientAppointmen(long Id);        
+        public Task<IQueryable<PatientAppointmentDto>> GetAllPatientAppointment();
 
     }
 }

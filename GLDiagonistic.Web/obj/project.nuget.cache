@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "nBZiVa4gL8nYqV5Vpe5ZcK8BNvwruFnVCbqkdom06Zrwi3thVJ9EZ2N/CYuaueTMQjphNWhR1EjqffgJU322Cw==",
+  "dgSpecHash": "k0QqFe2sis9xaZo6JX4gy45b6Kyb7yP/PGm0Bdq8P8/ef7yFoEze2CAik+Fv2NejUG14cJXgBJoXWZ4GX94wtA==",
   "success": true,
   "projectFilePath": "G:\\Fahim\\Dot Net Core\\GreenLifeDiagonistic\\GLDiagonistic.Web\\GLDiagonistic.Web.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\uks.t7\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\uks.t7\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "C:\\Users\\uks.t7\\.nuget\\packages\\bouncycastle.cryptography\\2.2.1\\bouncycastle.cryptography.2.2.1.nupkg.sha512",
+    "C:\\Users\\uks.t7\\.nuget\\packages\\dapper\\2.1.4\\dapper.2.1.4.nupkg.sha512",
     "C:\\Users\\uks.t7\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\uks.t7\\.nuget\\packages\\mailkit\\3.2.0\\mailkit.3.2.0.nupkg.sha512",
     "C:\\Users\\uks.t7\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",

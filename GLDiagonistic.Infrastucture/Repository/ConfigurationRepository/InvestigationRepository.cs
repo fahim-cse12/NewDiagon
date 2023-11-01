@@ -1,11 +1,11 @@
 ﻿using AutoMapper;
 using GLDiagonistic.Infrastucture.Common;
 using GLDiagonistice.Application.IRepository;
-using GLDiagonistice.Application.Service.Admin.Dto;
+using GLDiagonistice.Application.Service.ConfigurationService.Dto;
 using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 
-namespace GLDiagonistic.Infrastucture.Repository.Admin
+namespace GLDiagonistic.Infrastucture.Repository.ConfigurationRepository
 {
     public class InvestigationRepository : IInvestigationRepository
     {

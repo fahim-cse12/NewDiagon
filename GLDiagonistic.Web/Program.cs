@@ -1,22 +1,22 @@
 using GLDiagonistic.Domain.Users;
 using GLDiagonistic.Infrastucture.Common;
 using GLDiagonistic.Infrastucture.Helper;
-using GLDiagonistic.Infrastucture.Repository.Admin;
-using GLDiagonistic.Infrastucture.Repository.PatientAppointmentRepository;
+using GLDiagonistic.Infrastucture.Repository.ConfigurationRepository;
+using GLDiagonistic.Infrastucture.Repository.PatientAppointment;
 using GLDiagonistic.Infrastucture.Repository.User;
 using GLDiagonistice.Application.IRepository;
-using GLDiagonistice.Application.IService.Admin;
 using GLDiagonistice.Application.IService.Common;
+using GLDiagonistice.Application.IService.Configuration;
 using GLDiagonistice.Application.IService.IPatientAppointmentService;
 using GLDiagonistice.Application.IService.User;
 using GLDiagonistice.Application.Service.Admin;
 using GLDiagonistice.Application.Service.Common;
+using GLDiagonistice.Application.Service.ConfigurationService;
 using GLDiagonistice.Application.Service.PatientAppointmentService;
 using GLDiagonistice.Application.Service.User;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 using System.Data;
 
 var builder = WebApplication.CreateBuilder(args);

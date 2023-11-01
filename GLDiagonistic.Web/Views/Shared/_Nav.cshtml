@@ -16,6 +16,13 @@
         new { Url = "/Payment/Index", Text = "Payment" },
         new { Url = "/PatientAppointment/PatientHistory", Text = "Patient History" }
     };
+    var adminMenuItem = new[]
+           {
+        new { Url = "/AllPatientAppointment/Index", Text = "All Appointment" },
+        new { Url = "/AllPatientAppointment/Index", Text = "Expense" },
+        new { Url = "/AllPatientAppointment/Index", Text = "Income" },
+      
+    };
 }
 
 <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
@@ -65,7 +72,7 @@
             <li class="menu-item @(appointmentMenuOpen.Any() ? "open" : "")">
                 <a href="javascript:void(0);" class="menu-link menu-toggle">
                     <i class="menu-icon tf-icons mdi mdi-window-maximize"></i>
-                    <div data-i18n="Configuration">Configuration</div>
+                    <div data-i18n="Configuration">Patient Appointment</div>
                 </a>
                 @foreach (var item in appointmentMenuItem)
                 {
@@ -80,28 +87,27 @@
 
             </li>
         }
-    
 
-        <li class="menu-item">
-            <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons mdi mdi-window-maximize"></i>
-                <div data-i18n="Admin">Admin</div>
-            </a>
+        @{
+            var adminMenuOpen = adminMenuItem.Where(i => i.Url == currentUrl).ToList();
+            <li class="menu-item @(appointmentMenuOpen.Any() ? "open" : "")">
+                <a href="javascript:void(0);" class="menu-link menu-toggle">
+                    <i class="menu-icon tf-icons mdi mdi-window-maximize"></i>
+                    <div data-i18n="Admin">Admin</div>
+                </a>
+                @foreach (var item in adminMenuItem)
+                {
+                    <ul class="menu-sub">
+                        <li class="menu-item @(Context.Request.Path == item.Url ? "active" : "")">
+                            <a href=@item.Url class="menu-link">
+                                <div>@item.Text</div>
+                            </a>
+                        </li>
+                    </ul>
+                }
 
-            <ul class="menu-sub">
-                <li class="menu-item">
-                    <a href="/PatientAppointment/Index" class="menu-link">
-                        <div data-i18n="Patient Appointment">Expense</div>
-                    </a>
-                </li>
-
-                <li class="menu-item">
-                    <a href="/InvestigationResult/Index" class="menu-link">
-                        <div data-i18n="Investigation Result">Income</div>
-                    </a>
-                </li>
-
-            </ul>
-        </li>
+            </li>
+        }
+        
     </ul>
 </aside>

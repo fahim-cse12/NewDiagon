@@ -1,5 +1,5 @@
-﻿using GLDiagonistice.Application.Service.Admin.Dto;
-using GLDiagonistice.Application.Service.Common;
+﻿using GLDiagonistice.Application.Service.Common;
+using GLDiagonistice.Application.Service.ConfigurationService.Dto;
 
 namespace GLDiagonistice.Application.IService.Configuration
 {

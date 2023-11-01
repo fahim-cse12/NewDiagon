@@ -3165,6 +3165,10 @@
       "PackagePath": "staticwebassets\\images\\logo.jpg"
     },
     {
+      "Id": "G:\\Fahim\\Dot Net Core\\GreenLifeDiagonistic\\GLDiagonistic.Web\\wwwroot\\js\\AllPatientAppointment.js",
+      "PackagePath": "staticwebassets\\js\\AllPatientAppointment.js"
+    },
+    {
       "Id": "G:\\Fahim\\Dot Net Core\\GreenLifeDiagonistic\\GLDiagonistic.Web\\wwwroot\\js\\PatientAppointment.js",
       "PackagePath": "staticwebassets\\js\\PatientAppointment.js"
     },

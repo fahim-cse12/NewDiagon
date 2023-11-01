@@ -48,6 +48,14 @@
           }
         }
       },
+      "Dapper/2.1.4": {
+        "runtime": {
+          "lib/net5.0/Dapper.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.1.4.42149"
+          }
+        }
+      },
       "Humanizer.Core/2.8.26": {
         "runtime": {
           "lib/netstandard2.0/Humanizer.dll": {
@@ -1410,6 +1418,7 @@
       "GLDiagonistic.Infrastucture/1.0.0": {
         "dependencies": {
           "AutoMapper": "12.0.1",
+          "Dapper": "2.1.4",
           "GLDiagonistic.Domain": "1.0.0",
           "GLDiagonistice.Application": "1.0.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.21",
@@ -1463,6 +1472,13 @@
       "sha512": "sha512-A6Zr52zVqJKt18ZBsTnX0qhG0kwIQftVAjLmszmkiR/trSp8H+xj1gUOzk7XHwaKgyREMSV1v9XaKrBUeIOdvQ==",
       "path": "bouncycastle.cryptography/2.2.1",
       "hashPath": "bouncycastle.cryptography.2.2.1.nupkg.sha512"
+    },
+    "Dapper/2.1.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-TnTa28ktP/drRXnnXChHANq2WoF8af9DLu3VBtyPn3RYjxwDzuYhGrSvAN2CrmE+RyNaN1v81kf6rYbp0a4UaQ==",
+      "path": "dapper/2.1.4",
+      "hashPath": "dapper.2.1.4.nupkg.sha512"
     },
     "Humanizer.Core/2.8.26": {
       "type": "package",

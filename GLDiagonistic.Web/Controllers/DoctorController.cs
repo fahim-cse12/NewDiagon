@@ -1,6 +1,6 @@
-﻿using GLDiagonistice.Application.IService.Admin;
-using GLDiagonistice.Application.Service.Admin.Dto;
+﻿using GLDiagonistice.Application.IService.Configuration;
 using GLDiagonistice.Application.Service.Common;
+using GLDiagonistice.Application.Service.ConfigurationService.Dto;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GLDiagonistic.Web.Controllers

@@ -1,20 +1,20 @@
 ﻿using AutoMapper;
 using GLDiagonistic.Infrastucture.Common;
 using GLDiagonistice.Application.IRepository;
-using GLDiagonistice.Application.Service.Doctor.Dto;
+using GLDiagonistice.Application.Service.ConfigurationService.Dto;
 using Microsoft.EntityFrameworkCore;
 
-namespace GLDiagonistic.Infrastucture.Repository.DoctorRepository
+namespace GLDiagonistic.Infrastucture.Repository.ConfigurationRepository
 {
     public class DoctorRepository : IDoctorRepository
     {
         private readonly GLDDbContext _dbContext;
         private readonly IMapper _mapper;
-        public DoctorRepository(GLDDbContext dbContext, IMapper mapper) 
+        public DoctorRepository(GLDDbContext dbContext, IMapper mapper)
         {
-            this._dbContext = dbContext;
-            this._mapper = mapper;
-        }   
+            _dbContext = dbContext;
+            _mapper = mapper;
+        }
         public async Task<List<DoctorDto>> GetAllDoctor()
         {
             try

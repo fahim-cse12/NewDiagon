@@ -17,9 +17,8 @@ namespace GLDiagonistic.Infrastucture.Common
 
         //}
         public DbSet<Doctor> Doctors { get; set; }
-        public DbSet<Patient> Patients { get; set; }
         public DbSet<Investigation> Investigations { get; set; }
-        public DbSet<Appointment> Appointments { get; set; }
-        public DbSet<InvestigationResult> InvestigationResults { get; set; }
+        public DbSet<PatientAppointment> PatientAppointments { get; set; }
+        public DbSet<PatientInvestigation> PatientInvestigations { get; set; }
     }
 }

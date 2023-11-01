@@ -1,4 +1,4 @@
-﻿using GLDiagonistice.Application.Service.Admin.Dto;
+﻿using GLDiagonistice.Application.Service.ConfigurationService.Dto;
 
 namespace GLDiagonistice.Application.IRepository
 {

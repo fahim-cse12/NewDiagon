@@ -1,0 +1,35 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<div class="container-xxl flex-grow-1 container-p-y">
+    <div class="row">
+        <div class="card">
+            <h5 class="card-header">Patient Appointment</h5>
+            <div class="card-body">
+                <div class="card-datatable dataTable_select text-nowrap table-responsive">
+                    <table class="dt_Appointment table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Action</th>
+                                <th class="collapsed">Id</th>
+                                <th>Patient Name</th>
+                                <th>Patient Age</th>
+                                <th>Mobile No</th>
+                                <th>Doctor Name</th>
+                                <th>Doctor Fee</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+@section Scripts{
+    <script src="/js/patientappointment.js"></script>
+}

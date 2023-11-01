@@ -6,9 +6,7 @@ using System.Threading.Tasks;
 
 namespace GLDiagonistice.Application.Service.PatientAppointmentService.Dto
 {
-    public class PatientAppointmentMapper
+    public class PatientInvestigationDto
     {
-        public AppointmentDto appointmentDto {get; set;}
-        public PatientDto patientDto { get; set; }
     }
 }

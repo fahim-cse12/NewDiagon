@@ -1,9 +1,4 @@
-﻿using GLDiagonistice.Application.Service.Admin.Dto;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using GLDiagonistice.Application.Service.ConfigurationService.Dto;
 
 namespace GLDiagonistice.Application.IRepository
 {

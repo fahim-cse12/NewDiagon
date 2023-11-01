@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ujJNcz+OIb+FHXWtVGa94DZ9QjdYZXXAfoTCpFuyvYw=",
+  "Hash": "7C6ihlocjxeJEtLkqloQJ+C9zplLpF0cb/EBaMMstyE=",
   "Source": "GLDiagonistic.Web",
   "BasePath": "_content/GLDiagonistic.Web",
   "Mode": "Default",
@@ -13479,6 +13479,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\Thumbnail-scaled.jpg"
+    },
+    {
+      "Identity": "G:\\Fahim\\Dot Net Core\\GreenLifeDiagonistic\\GLDiagonistic.Web\\wwwroot\\js\\AllPatientAppointment.js",
+      "SourceId": "GLDiagonistic.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "G:\\Fahim\\Dot Net Core\\GreenLifeDiagonistic\\GLDiagonistic.Web\\wwwroot\\",
+      "BasePath": "_content/GLDiagonistic.Web",
+      "RelativePath": "js/AllPatientAppointment.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\AllPatientAppointment.js"
     },
     {
       "Identity": "G:\\Fahim\\Dot Net Core\\GreenLifeDiagonistic\\GLDiagonistic.Web\\wwwroot\\js\\PatientAppointment.js",

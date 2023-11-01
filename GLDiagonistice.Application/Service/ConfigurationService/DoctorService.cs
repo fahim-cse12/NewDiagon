@@ -1,7 +1,7 @@
 ﻿using GLDiagonistice.Application.IRepository;
-using GLDiagonistice.Application.IService.Admin;
-using GLDiagonistice.Application.Service.Admin.Dto;
+using GLDiagonistice.Application.IService.Configuration;
 using GLDiagonistice.Application.Service.Common;
+using GLDiagonistice.Application.Service.ConfigurationService.Dto;
 using Microsoft.AspNetCore.Http;
 
 namespace GLDiagonistice.Application.Service.Admin
@@ -56,6 +56,16 @@ namespace GLDiagonistice.Application.Service.Admin
         }
 
         public Task<ResponseModel<DoctorDto>> GetDoctorById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<ResponseModel<List<DoctorDto>>> IDoctorService.GetAllDoctorList()
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<ResponseModel<DoctorDto>> IDoctorService.GetDoctorById(int id)
         {
             throw new NotImplementedException();
         }

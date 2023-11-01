@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GLDiagonistice.Application.Service.Admin.Dto
+namespace GLDiagonistice.Application.Service.ConfigurationService.Dto
 {
     public class InvestigationDto : BaseEntityDto
     {

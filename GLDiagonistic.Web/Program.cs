@@ -70,7 +70,7 @@ builder.Services.AddTransient<IDbConnection>(provider =>
     return new SqlConnection(connectionString);
 });
 builder.Services.Configure<IdentityOptions>(opt => opt.SignIn.RequireConfirmedEmail = true);
-
+builder.Services.AddAutoMapper(typeof(Program).Assembly);
 
 var app = builder.Build();
 

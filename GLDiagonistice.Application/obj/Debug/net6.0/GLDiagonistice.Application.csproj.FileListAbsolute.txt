@@ -13,3 +13,4 @@ G:\Fahim\Dot Net Core\GreenLifeDiagonistic\GLDiagonistice.Application\obj\Debug\
 G:\Fahim\Dot Net Core\GreenLifeDiagonistic\GLDiagonistice.Application\obj\Debug\net6.0\refint\GLDiagonistice.Application.dll
 G:\Fahim\Dot Net Core\GreenLifeDiagonistic\GLDiagonistice.Application\obj\Debug\net6.0\GLDiagonistice.Application.pdb
 G:\Fahim\Dot Net Core\GreenLifeDiagonistic\GLDiagonistice.Application\obj\Debug\net6.0\ref\GLDiagonistice.Application.dll
+G:\Fahim\Dot Net Core\GreenLifeDiagonistic\GLDiagonistice.Application\obj\Debug\net6.0\GLDiagonistice.Application.sourcelink.json

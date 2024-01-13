@@ -10,9 +10,8 @@ namespace GLDiagonistic.Infrastucture.Helper
         public AutoMappingProfile()
         {
             CreateMap<PatientAppointment, PatientAppointmentDto>().ReverseMap();
-            CreateMap<Doctor, DoctorDto>().ReverseMap();
             CreateMap<Investigation, InvestigationDto>().ReverseMap();
-
+           
         }
     }
 }

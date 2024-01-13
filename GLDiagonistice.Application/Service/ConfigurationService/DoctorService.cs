@@ -58,12 +58,7 @@ namespace GLDiagonistice.Application.Service.Admin
         public Task<ResponseModel<DoctorDto>> GetDoctorById(int id)
         {
             throw new NotImplementedException();
-        }
-
-        Task<ResponseModel<List<DoctorDto>>> IDoctorService.GetAllDoctorList()
-        {
-            throw new NotImplementedException();
-        }
+        }     
 
         Task<ResponseModel<DoctorDto>> IDoctorService.GetDoctorById(int id)
         {

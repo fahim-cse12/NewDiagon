@@ -4,6 +4,7 @@ using GLDiagonistice.Application.IService.IPatientAppointmentService;
 using GLDiagonistice.Application.Service.Common;
 using GLDiagonistice.Application.Service.PatientAppointmentService.Dto;
 using Microsoft.AspNetCore.Http;
+using System.Diagnostics;
 
 namespace GLDiagonistice.Application.Service.PatientAppointmentService
 {
@@ -17,16 +18,6 @@ namespace GLDiagonistice.Application.Service.PatientAppointmentService
             this._httpcontext = httpcontext;    
         }
 
-        public Task<ResponseModel<int>> CreateOrUpdateAppointment(PatientAppointmentDto patientAppointmentDto)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<ResponseModel<List<PatientAppointmentDto>>> GetAllAppointmentForCurrentDate()
-        {
-            throw new NotImplementedException();
-        }
-
         private ResponseModel<T> CreateResponse<T>(bool status, T? data, string message, List<string>? erros)
         {
             return new ResponseModel<T>
@@ -37,6 +28,46 @@ namespace GLDiagonistice.Application.Service.PatientAppointmentService
                 Errors = erros
             };
         }
+
+        public async Task<ResponseModel<int>> CreateOrUpdateAppointment(PatientAppointmentDto patientAppointmentDto)
+        {
+            try
+            {
+                var currentDate = DateTime.Now;
+                var userIdClaim = _httpcontext.HttpContext.User.Claims.FirstOrDefault(c => c.Type == "UserId");
+                var loginUserId = userIdClaim != null ? userIdClaim.Value : null;
+                if (patientAppointmentDto != null)
+                {
+                    if(patientAppointmentDto.Id == 0)
+                    {
+                        patientAppointmentDto.Status = true;
+                        patientAppointmentDto.CreatedAt = currentDate;
+                        patientAppointmentDto.CreatedBy = loginUserId;
+                        patientAppointmentDto.UpdateddBy = loginUserId;
+                        patientAppointmentDto.UpdatedAt = currentDate;
+                    }
+                    patientAppointmentDto.UpdateddBy = loginUserId;
+                    patientAppointmentDto.UpdatedAt = currentDate;
+                    var appointmentId = await _patientAppointmentRepository.SaveAndUpdatePatientAppointment(patientAppointmentDto);
+
+                    return CreateResponse<int>(true, appointmentId, "Patient appointment saved Successfully", null);
+                }
+                return CreateResponse<int>(false, 0, "Something Went Wrong", null);
+            }
+            catch (Exception ex)
+            {
+                return CreateResponse<int>(false, 0, ex.Message, null);
+                Debug.WriteLine(ex.Message);
+                throw;
+            }
+        }
+
+        public Task<ResponseModel<List<PatientAppointmentDto>>> GetAllAppointmentForCurrentDate()
+        {
+            throw new NotImplementedException();
+        }
+
+       
         //public async Task<ResponseModel<int>> CreateOrUpdateAppointment(PatientAppointmentDto patientAppointmentDto)
         //{
         //    try

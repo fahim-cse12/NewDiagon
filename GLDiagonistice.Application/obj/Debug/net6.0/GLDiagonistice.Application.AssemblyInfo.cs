@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GLDiagonistice.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2b8a8f1b2d9a5d29222fd11c9960b194d476b4bd")]
 [assembly: System.Reflection.AssemblyProductAttribute("GLDiagonistice.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GLDiagonistice.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

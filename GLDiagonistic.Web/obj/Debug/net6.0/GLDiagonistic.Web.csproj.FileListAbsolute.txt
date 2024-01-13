@@ -91,3 +91,5 @@ G:\Fahim\Dot Net Core\GreenLifeDiagonistic\GLDiagonistic.Web\obj\Debug\net6.0\GL
 G:\Fahim\Dot Net Core\GreenLifeDiagonistic\GLDiagonistic.Web\obj\Debug\net6.0\GLDiagonistic.Web.genruntimeconfig.cache
 G:\Fahim\Dot Net Core\GreenLifeDiagonistic\GLDiagonistic.Web\obj\Debug\net6.0\ref\GLDiagonistic.Web.dll
 G:\Fahim\Dot Net Core\GreenLifeDiagonistic\GLDiagonistic.Web\bin\Debug\net6.0\Dapper.dll
+G:\Fahim\Dot Net Core\GreenLifeDiagonistic\GLDiagonistic.Web\obj\Debug\net6.0\GLDiagonistic.Web.sourcelink.json
+G:\Fahim\Dot Net Core\GreenLifeDiagonistic\GLDiagonistic.Web\bin\Debug\net6.0\Newtonsoft.Json.dll

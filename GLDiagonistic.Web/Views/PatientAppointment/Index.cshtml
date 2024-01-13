@@ -1,10 +1,4 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
-
-
+﻿
 <div class="container-xxl flex-grow-1 container-p-y">
    
     <div class="row">
@@ -16,21 +10,21 @@
                     <input type="hidden" coll id="patientId" class="form-control" name="patientId" />
                     <div class="col-md-6">
                         <div class="form-floating form-floating-outline">
-                            <input type="text" id="patientname" class="form-control" placeholder="Name" name="patientName" required />
+                            <input type="text" id="patientname" class="form-control" placeholder="Name" name="PatientName" required />
                             <label for="name">Patient Name</label>
                             <div class="invalid-feedback"> Please enter Patient name</div>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="form-floating form-floating-outline">
-                            <input type="text" id="age" class="form-control" placeholder="Age" name="age" required />
+                            <input type="text" id="age" class="form-control" placeholder="Age" name="PatientAge" required />
                             <label for="age">Patient Age</label>
                             <div class="invalid-feedback"> Please enter Patient Age</div>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="form-floating form-floating-outline">
-                            <select id="selectpickerBasic" name="gender" class="selectpicker w-100" data-style="btn-default">
+                            <select id="gender" name="PatientGender" class="selectpicker w-100" data-style="btn-default">
                                 <option value="Male">Male</option>
                                 <option value="Female">Female</option>
                                 <option value="Others">Others</option>
@@ -39,63 +33,53 @@
                         </div>
 
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                         <div class="form-floating form-floating-outline">
-                            <input type="text" id="contactNumber" class="form-control" placeholder="01xxxxxxxx" name="contactNumber" required />
+                            <input type="text" id="contactNumber" class="form-control" placeholder="01xxxxxxxx" name="MobileNo" required />
                             <label for="contactNumber">Mobile Number</label>
                             <div class="invalid-feedback"> Please enter Mobile Number</div>
                         </div>
                     </div>
-                    <div class="col-md-3">
-                        <div class="form-floating form-floating-outline">
-                            <input type="email" id="email" class="form-control" placeholder="example@gmail.com" name="email" required />
-                            <label for="email">Email</label>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-floating form-floating-outline">
-                            <textarea class="form-control" id="address" rows="1" name="patientAddress" placeholder="Address"></textarea>
-                            <label for="address">Address</label>
-                        </div>
-                    </div>
-
+                                    
                     <div class="col-md-4">
+                        <div class="form-floating form-floating-outline">
+                            <input type="text" id="patientType" class="form-control" disabled name="PatientType" />
+                           
+                            <label for="patientType">Patient Type</label>
+                        </div>
+                    </div>
+                     <div class="col-md-4">
 
                         <div class="form-floating form-floating-outline">
-                            <select id="select2Basic" name="doctorId" required class="select2 form-select form-select-lg" data-allow-clear="true">
+                            <select id="select2Basic" name="DoctorId" required class="select2 form-select form-select-lg" data-allow-clear="true">
                             </select>
                             <label for="select2Basic">Select Doctor</label>
                             <div class="invalid-feedback"> Please select Doctor</div>
                         </div>
                     </div>
+
                     <div class="col-md-4">
                         <div class="form-floating form-floating-outline">
-                            <input type="text" name="appointmentTime" class="form-control" placeholder="HH:MM" id="flatpickr-time" />
-                            <label for="flatpickr-time">Appoint Time</label>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-floating form-floating-outline">
-                            <input type="number" id="doctorFee" class="form-control" placeholder="00.00 BDT" name="doctorFee" readonly />
+                            <select id="doctorFee" class="form-control" name="DoctorsFee">
+                                <option value="" selected disabled>Select an option</option>
+                            </select>
                             <label for="doctorFee">Doctor Fee</label>
                         </div>
                     </div>
-                    <div class="col-md-6">
 
+                    <div class="col-md-4">
                         <div class="form-floating form-floating-outline">
-                            <select id="investigation" name="investigationId" class="select2 form-select form-select-lg" data-allow-clear="true">
-                            </select>
-                            <label for="select2Basic">Select Investigation</label>
-                            <div class="invalid-feedback"> Please select any test</div>
-                        </div>
-                    </div>               
-                    <div class="col-md-6">
-                        <div class="form-floating form-floating-outline">
-                            <input type="number" id="investigationFee" class="form-control" placeholder="00.00 BDT" name="investigationFee" readonly />
-                            <label for="doctorFee">Investigation Fee</label>
+                            <input type="number" id="paymentAmount" class="form-control" placeholder="00.00 BDT" name="Paid" />
+                            <label for="paymentAmount">Payment Amount</label>
                         </div>
                     </div>
-
+                    <div class="col-md-4">
+                        <div class="form-floating form-floating-outline">
+                            <input type="number" id="dueAmount" class="form-control" readonly placeholder="00.00 BDT" name="Due" />
+                            <label for="dueAmount">Due Amount</label>
+                        </div>
+                    </div>
+                   
                     <hr />
 
                     <div class="col-12">
@@ -130,7 +114,3 @@
 @section Scripts{
     <script src="/js/patientappointment.js"></script>
 }
-
-@*<script src="~/assets/vendor/libs/jquery/jquery.js"></script>
-<script src="~/assets/vendor/libs/bootstrap-daterangepicker/bootstrap-daterangepicker.js"></script>
-<script src="~/js/patientappointment.js"></script>*@

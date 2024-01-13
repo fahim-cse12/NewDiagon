@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "iFW0jkEid+WzY7iju/ZIPow4CJWOS09whjPbjLEpv+IbDT++obQICOYHabmgapes+daNoDZH0cVi7WInkfNXfg==",
+  "dgSpecHash": "uXXAiD6cIBHSlUcq6/Yk02p/jT17gSx56eEG4tLqH6IFcWZttA7Ucjmxf8icroSbx4naZzbRMXf9m6wXBuepYQ==",
   "success": true,
   "projectFilePath": "G:\\Fahim\\Dot Net Core\\GreenLifeDiagonistic\\GLDiagonistic.Domain\\GLDiagonistic.Domain.csproj",
   "expectedPackageFiles": [
@@ -46,10 +46,7 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.security.cryptography.xml\\4.5.0\\system.security.cryptography.xml.4.5.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.security.permissions\\4.5.0\\system.security.permissions.4.5.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.security.principal.windows\\4.5.0\\system.security.principal.windows.4.5.0.nupkg.sha512",
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.text.encodings.web\\4.5.0\\system.text.encodings.web.4.5.0.nupkg.sha512",
-    "C:\\Users\\uks.t7\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.16\\microsoft.windowsdesktop.app.ref.6.0.16.nupkg.sha512",
-    "C:\\Users\\uks.t7\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.16\\microsoft.netcore.app.ref.6.0.16.nupkg.sha512",
-    "C:\\Users\\uks.t7\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.16\\microsoft.aspnetcore.app.ref.6.0.16.nupkg.sha512"
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.text.encodings.web\\4.5.0\\system.text.encodings.web.4.5.0.nupkg.sha512"
   ],
   "logs": []
 }

@@ -10,6 +10,7 @@ namespace GLDiagonistice.Application.Service.PatientAppointmentService.Dto
         public string PatientGender { get; set; }
         public string PatientAddress { get; set; }
         public string MobileNo { get; set; }
+        public string PatientType { get; set; }
         public int DoctorId { get; set; }
         public decimal DoctorsFee { get; set; }
         public decimal Paid { get; set; }

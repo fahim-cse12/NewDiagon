@@ -3,6 +3,10 @@ using GLDiagonistic.Infrastucture.Common;
 using GLDiagonistice.Application.IRepository;
 using GLDiagonistice.Application.Service.ConfigurationService.Dto;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace GLDiagonistic.Infrastucture.Repository.ConfigurationRepository
 {
@@ -22,17 +26,39 @@ namespace GLDiagonistic.Infrastucture.Repository.ConfigurationRepository
                 var doctorList = await _dbContext.Doctors.AsNoTracking().ToListAsync();
                 if (doctorList.Any())
                 {
-                    return _mapper.Map<List<DoctorDto>>(doctorList);
+                    List<DoctorDto> resultList = new List<DoctorDto>();
+                    foreach (var item in doctorList)
+                    {
+                        var doctor = new DoctorDto
+                        {
+                            Id = item.Id,
+                            DoctorName = item.DoctorName,
+                            ContactNumber = item.ContactNumber,
+                            Gender = item.Gender,
+                            SpecialistOn = item.SpecialistOn,
+                            Status = item.Status,
+                            DoctorsFee = JsonConvert.DeserializeObject<Fees>(item.DoctorsFee.ToString()),
+                            CreatedAt = item.CreatedAt,
+                            CreatedBy = item.CreatedBy,
+                            ScheduleDays = item.ScheduleDays,
+                            UpdatedAt = item.UpdatedAt,
+                            UpdateddBy = item.UpdateddBy
+                        };
+
+                        resultList.Add(doctor);
+                    }
+
+                    return resultList;
                 }
 
                 return new List<DoctorDto>();
-
             }
             catch (Exception ex)
             {
-
+                Debug.WriteLine(ex.Message);
                 throw;
             }
         }
+
     }
 }

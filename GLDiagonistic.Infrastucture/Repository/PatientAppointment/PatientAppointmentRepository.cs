@@ -49,40 +49,33 @@ namespace GLDiagonistic.Infrastucture.Repository.PatientAppointment
             throw new NotImplementedException();
         }
 
-        //public Task<AppointmentDto> GetAppointmentById(int id)
-        //{
-        //    throw new NotImplementedException();
-        //}
+      
 
-        //public Task<PatientDto> GetPatientAppointmentById(long id)
-        //{
-        //    throw new NotImplementedException();
-        //}
-
-        //public Task<PatientDto> GetPatientInfoById(int id)
-        //{
-        //    throw new NotImplementedException();
-        //}
-
-        //public async Task<int> SaveAndUpdateAppointmentDto(AppointmentDto appointmentDto)
-        //{
-        //    Appointment aappointment = _mapper.Map<Appointment>(appointmentDto);
-        //    if(appointmentDto.Id > 0)
-        //    {
-        //        _dbContext.Appointments.Update(aappointment);
-        //    }
-        //    else
-        //    {
-        //        await _dbContext.Appointments.AddAsync(aappointment);
-        //    }                   
-        //    await _dbContext.SaveChangesAsync();
-
-        //    return aappointment.Id;
-        //}
-
-        public Task<int> SaveAndUpdatePatientAppointment(PatientAppointmentDto patientAppointmentDto)
+        public async Task<int> SaveAndUpdatePatientAppointment(PatientAppointmentDto patientAppointmentDto)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var patientAppointment = _mapper.Map<GLDiagonistic.Domain.PatientAppointment>(patientAppointmentDto);
+                if(patientAppointmentDto.Id > 0)
+                {
+                    var appointment = _dbContext.PatientAppointments.Update(patientAppointment);
+                    await _dbContext.SaveChangesAsync();
+                    return (int)appointment.Entity.Id;
+                }
+                else
+                {
+                    var appointment = await _dbContext.PatientAppointments.AddAsync(patientAppointment);
+                    await _dbContext.SaveChangesAsync();
+                    return (int)appointment.Entity.Id;
+                }               
+
+            }
+            catch (Exception ex)
+            {
+                return 0 ;
+                Debug.WriteLine(ex.Message);
+                throw;
+            }
         }
 
         //public async Task<int> SaveAndUpdatePatientInformation(PatientDto patientDto)

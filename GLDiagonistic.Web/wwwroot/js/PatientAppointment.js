@@ -6,8 +6,8 @@ var dtAppointment;
 
 $(document).ready(function () {
     LoadDoctorList();
-    LoadInvestigation();
-    LoadAllCurrentAppointments();
+
+  //  LoadAllCurrentAppointments();
     var selectElement = $('#select2Basic');
 
     selectElement.on('change', function () {
@@ -17,7 +17,7 @@ $(document).ready(function () {
 
         // Find the doctor in the doctorList based on the selectedDoctorId
         var selectedDoctor = doctorList.find(function (doctor) {
-            var doctor_Id = doctor.id.toString().trim();
+            var doctor_Id = doctor.Id;
             var selectedId = selectedDoctorId.toString().trim();
             return doctor_Id === selectedId;
         });
@@ -32,29 +32,6 @@ $(document).ready(function () {
         }
     });
 
-    var testSelect = $('#investigation');
-
-    testSelect.on('change', function () {
-        var selectedtestId = $(this).val();
-        investigationId = selectedtestId;
-        console.log('Selected investigationId:', selectedtestId);
-
-        // Find the doctor in the doctorList based on the selectedDoctorId
-        var selectedInvestigation = investigationList.find(function (test) {
-            var test_Id = test.id.toString().trim();
-            var selectedId = selectedtestId.toString().trim();
-            return test_Id === selectedId;
-        });
-
-        if (selectedInvestigation) {
-            // You can access the selected doctor's properties here
-            console.log('Selected Investigation:', selectedInvestigation);
-
-            $('#investigationFee').val(selectedInvestigation.cost);
-        } else {
-            console.log('Investigation not found with ID:', selectedtestId);
-        }
-    });
 });
 
 function LoadAllCurrentAppointments() {
@@ -111,16 +88,14 @@ function LoadDoctorList() {
         success: function (response) {
             doctorList = response.data;
             console.log(doctorList);
-            // Assuming 'data' is an array of objects with 'value' and 'text' properties
+
             var selectElement = $('#select2Basic');
-            // Clear any existing options
             selectElement.empty();
-            // Add an empty option if you want to allow clearing
             selectElement.append($('<option>', {
                 value: '',
                 text: 'Select an option'
             }));
-            // Iterate through the data and populate the options
+
             response.data.forEach(function (item) {
                 selectElement.append($('<option>', {
                     value: item.id,
@@ -128,48 +103,38 @@ function LoadDoctorList() {
                 }));
             });
 
-            // Initialize Select2 after updating the options
             selectElement.select2({
                 placeholder: 'Select an option',
                 allowClear: true
-            });
-        },
-        error: function (error) {
-            console.error('Error fetching data:', error);
-        }
-    });
-}
+            }).on('change', function () {
+                var selectedDoctorId = $(this).val();
+                var selectedDoctor = doctorList.find(function (doctor) {
+                    return doctor.id == selectedDoctorId;
+                });
 
-function LoadInvestigation()
-{
-    $.ajax({
-        url: '/Investigation/LoadAllInvestigationList',
-        method: 'GET',
-        dataType: 'json',
-        success: function (response) {
-            investigationList = response.data;
-            console.log(investigationList);
-            // Assuming 'data' is an array of objects with 'value' and 'text' properties
-            var selectElement = $('#investigation');
-            // Clear any existing options
-            selectElement.empty();
-            // Add an empty option if you want to allow clearing
-            selectElement.append($('<option>', {
-                value: '',
-                text: 'Select an option'
-            }));
-            // Iterate through the data and populate the options
-            response.data.forEach(function (item) {
-                selectElement.append($('<option>', {
-                    value: item.id,
-                    text: item.investigationName
+                var feeSelectElement = $('#doctorFee');
+                feeSelectElement.empty();
+                feeSelectElement.append($('<option>', {
+                    value: '',
+                    text: 'Select an option'
                 }));
-            });
 
-            // Initialize Select2 after updating the options
-            selectElement.select2({
-                placeholder: 'Select an option',
-                allowClear: true
+                if (selectedDoctor) {
+                    feeSelectElement.append($('<option>', {
+                        value: selectedDoctor.doctorsFee.forNew,
+                        text: 'For New: ' + selectedDoctor.doctorsFee.forNew
+                    }));
+
+                    feeSelectElement.append($('<option>', {
+                        value: selectedDoctor.doctorsFee.forOld,
+                        text: 'For Old: ' + selectedDoctor.doctorsFee.forOld
+                    }));
+                }
+
+                feeSelectElement.select2({
+                    placeholder: 'Select an option',
+                    allowClear: true
+                });
             });
         },
         error: function (error) {
@@ -177,17 +142,54 @@ function LoadInvestigation()
         }
     });
 }
+$('#doctorFee').on('change', function () {
+    var selectedFeeOption = $(this).find('option:selected').text();
+    var feeType = selectedFeeOption.split(':')[0].trim(); // This will be either "For New" or "For Old"
+    var patientType = feeType.split(' ')[1]; // This will be either "New" or "Old"
+    $('#patientType').val(patientType);
 
+    console.log(patientType);
+});
+
+$('#doctorFee, #paymentAmount').on('input', function () {
+    var selectedFeeOption = $('#doctorFee').find('option:selected').text();
+    var feeAmount = parseFloat(selectedFeeOption.split(':')[1].trim()); // Extract the fee amount from the selected option
+    var paymentAmount = parseFloat($('#paymentAmount').val()); // Get the payment amount entered by the user
+
+    if (isNaN(feeAmount)) {
+        feeAmount = 0; // If no fee is selected, consider it as 0
+    }
+    if (isNaN(paymentAmount)) {
+        paymentAmount = 0; // If no payment is entered, consider it as 0
+    }
+
+    var dueAmount = feeAmount - paymentAmount; // Calculate the due amount
+    $('#dueAmount').val(dueAmount.toFixed(2)); // Set the due amount in the #dueAmount field
+});
 
 function SavePatientAppointment() {
-    var form = document.getElementById('patientAppointment'); // Get the form element
-    var patientAppointmentDto = $(form).serializeArray(); // Serialize form data
+    var form = document.getElementById('patientAppointment');
+    var patientAppointmentDto = $(form).serializeArray();
+    //var patientAppointmentDto = {
+    //    Id: $('#appointmentId').val(),
+    //    PatientName: $('#patientname').val(),
+    //    PatientAge: $('#age').val(),
+    //    PatientGender: $('#gender').val(),
+    //    MobileNo: $('#contactNumber').val(),
+    //    PatientAddress: $('#address').val(),
+    //    PatientType: $('#patientType').val(),
+    //    DoctorId: $('#select2Basic').val(),
+    //    DoctorsFee: $('#doctorFee').val(),
+    //    Paid: $('#paymentAmount').val(),
+    //    Due: $('#dueAmount').val()
+    //};
    
     if (form.checkValidity()) {
         // Form is valid, proceed with AJAX request
         $.ajax({
             url: '/PatientAppointment/CreateOrUpdatePatientAppointment',
             type: 'POST',
+            /*data: JSON.stringify(patientAppointmentDto),*/
             data: patientAppointmentDto,
             success: function (response) {
                 if (response.success) {
